@@ -1,5 +1,5 @@
 const int sensorPin = A0;
-const float baselineTemp = 20.0;
+const float baselineTemp = 25.0;
 
 void setup() {
   Serial.begin(9600);
@@ -16,23 +16,23 @@ void loop() {
   float voltage = (sensorVal / 1024.0) * 5.0;
   Serial.print(", Volts: ");
   Serial.print(voltage);
-  float temperature = (voltage - 0.5) * 100;
+  float temperature = (voltage - 0.5) * 100.0;
   Serial.print(", degrees C: ");
   Serial.println(temperature);
 
-  if (temperature < baseline) {
+  if (temperature < baselineTemp) {
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
-  } else if (temperature >= baseline + 2 && temperature < baseline + 4) {
+  } else if (temperature >= baselineTemp && temperature < baselineTemp + 2) {
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);    
-  } else if (temperature >= baseline + 4 && temperature < baseline + 6) {
+  } else if (temperature >= baselineTemp + 2 && temperature < baselineTemp + 4) {
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);    
-  } else if (temperature >= baseline + 6) {
+  } else {
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);    
