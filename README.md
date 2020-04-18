@@ -18,14 +18,28 @@ arduino core install arduino:avr
 
 See the [arduino-cli](https://arduino.github.io/arduino-cli/) docs for more information on how to use the CLI
 
+# Compile projects for Arduino UNO
+
+```
+make compile PROJECT=<PROJECT_NAME>
+```
+
 # Deploy projects to Arduino UNO
 
 ```
-./deploy <PROJECT_NAME>
+make deploy PROJECT=<PROJECT_NAME>
 ```
+
+NB. This recompiles the project if necessary first
 
 # Listen to serial output from Arduino UNO
 
 ```
-./listen
+make listen
+```
+
+# Compile, deploy then listen in one go
+
+```
+make all PROJECT=<PROJECT_NAME>
 ```

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-stty -f /dev/cu.usbmodem14201 9600
-cat /dev/cu.usbmodem14201
