@@ -21,5 +21,11 @@ See the [arduino-cli](https://arduino.github.io/arduino-cli/) docs for more info
 # Deploy projects to Arduino UNO
 
 ```
-./deploy-uno <PROJECT_NAME>
+./deploy <PROJECT_NAME>
+```
+
+# Listen to serial output from Arduino UNO
+
+```
+./listen
 ```
